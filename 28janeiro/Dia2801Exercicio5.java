@@ -19,6 +19,8 @@ public class Dia2801Exercicio5 {
 		}while(x!=0);
 		
 		System.out.println("A soma dos números digitados é "+soma);
+		
+		//TESTE GITHUB
 
 	}
 
