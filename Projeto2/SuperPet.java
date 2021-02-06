@@ -6,18 +6,19 @@ abstract class SuperPet {
 	Scanner ler = new Scanner (System.in);
 	private String nomeDono;
 	private String endereco;
-	private int cpf;
-	private int telefone;
-	private double preco;
+	private String cpf;
+	private String telefone;
+	
 			
-	public SuperPet(String nomeDono,String endereco,int cpf,int telefone,double preco)
+	public SuperPet(String nomeDono,String endereco,String cpf,String telefone)
 	{
 		this.nomeDono = nomeDono;
 		this.endereco = endereco;
 		this.cpf = cpf;
 		this.telefone = telefone;
-		this.preco = preco;
+		
 	}
+	abstract public void cadastro();
 	
 	
 		
@@ -47,29 +48,22 @@ abstract class SuperPet {
 		this.endereco = endereco;
 	}
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
-	public double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(double preco) {
-		this.preco = preco;
-	}
 
 
 

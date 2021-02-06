@@ -6,8 +6,8 @@ public String nomeInterface = "Animais";
 	
 	abstract  String getNomeAnimal( );
 	abstract void setNomeAnimal(String Nome);
-	abstract int getIdade( );
-	abstract void setIdade(int idade);
+	abstract String getIdade( );
+	abstract void setIdade(String idade);
 	abstract double getPeso( );
 	abstract void setPeso(double peso);
 	abstract String getCor( );
@@ -18,7 +18,8 @@ public String nomeInterface = "Animais";
 	abstract void setRaca(String raca);
 	abstract public void banhoETosa();
 	abstract public void creche();
-	//abstract public void passeio();
+	abstract public void passeio();
+	abstract public void valortotal();
 	
 
 }
