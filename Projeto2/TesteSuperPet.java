@@ -5,30 +5,59 @@ import java.util.Scanner;
 
 public class TesteSuperPet {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Cachorro cachorro = new Cachorro();
 		Gato gato = new Gato();
-		ArrayList <String> cachorroInfo = new ArrayList();
-		ArrayList <String> donoInfo = new ArrayList();
-		Scanner ler = new Scanner (System.in);	
+		try(Scanner ler = new Scanner (System.in)){
 		
+		new Thread();
 		
+		System.out.println("Quais dos tipos abaixo é o seu amiguinho????");
+		Thread.sleep(2000);
 		System.out.println("Digite [1] --> Cachorro \nDigite [2] --> Gato");
 		int op = ler.nextInt();
+		while(op <1 || op>2) {
+			System.out.println("Opção inválida!!");
+			System.out.println("Quais dos tipos abaixo é o seu amiguinho????");
+			Thread.sleep(2000);
+			System.out.println("Digite [1] --> Cachorro \nDigite [2] --> Gato");
+			op = ler.nextInt();
+		}
 		
 		switch(op) {
+		
 		case 1 : cachorro.cadastro();
 			char continua;
 			do {
 			
-		System.out.println("Venha conhecer as nossas oções pro seu amiguinho!!!");
-		System.out.println("[1] --> Banho e tosa   [2] --> Creche  [3] --> Passeio");
+		System.out.println("Venha conhecer as nossas opções pro "+cachorro.getNomeAnimal()+"!!!");
+		Thread.sleep(1000);
+		System.out.println("[1] Banho e tosa --> (R$ 40,00 pequeno porte,R$ 50,00 médio porte,R$ 75,00 grande porte).");
+		Thread.sleep(1000);
+		System.out.println("[2] Creche --> (R$ 40,00 a 1º hora,R$ 15,00 as demais horas).");
+		Thread.sleep(1000);
+		System.out.println("[3] Passeio --> (R$ 30,00 a 1º hora,R$ 15,00 as demais horas).");
+		Thread.sleep(1000);
+		System.out.println("Digite sua opção...");
 		int op2 = ler.nextInt();
-		
+		while(op2 <1 || op2>3) {
+			System.out.println("Opção inválida!!");
+			Thread.sleep(1000);
+			System.out.println("[1] Banho e tosa --> (R$ 40,00 pequeno porte,R$ 50,00 médio porte,R$ 75,00 grande porte).");
+			Thread.sleep(1000);
+			System.out.println("[2] Creche --> (R$ 40,00 a 1º hora,R$ 15,00 as demais horas).");
+			Thread.sleep(1000);
+			System.out.println("[3] Passeio --> (R$ 30,00 a 1º hora,R$ 15,00 as demais horas).");
+			Thread.sleep(1000);
+			System.out.println("Digite sua opção...");
+			op2 = ler.nextInt();
+		}
+
 		switch(op2)
 		{
 		
 		case 1: 
+			Thread.sleep(1000);
 			System.out.print("Qual o peso do "+cachorro.getNomeAnimal()+"?");
 			cachorro.setPeso(ler.nextDouble());
 			cachorro.banhoETosa();break;
@@ -38,29 +67,53 @@ public class TesteSuperPet {
 			cachorro.creche();break;
 			
 		case 3:
-			
+		
 			cachorro.passeio();break;
 			
 		}
 		cachorro.valortotal();
-		System.out.print("Deseja adicionar mais algum serviço ?");
+		Thread.sleep(1000);
+		cachorro.formaPagamento();
+		Thread.sleep(1000);
+		System.out.print("Deseja adicionar mais algum serviço [SIM] ou [NÃO] ?");
 		continua  = ler.next().charAt(0);
 		}while(continua == 'S' || continua == 's');break;
 		
+		
 		case 2:
+			Thread.sleep(1000);
 			gato.cadastro();
 			
 			char continua2;
 			do {
-			
-		System.out.println("Venha conhecer as nossas oções pro seu amiguinho!!!");
-		System.out.println("[1] --> Banho e tosa   [2] --> Creche  [3] --> Passeio");
+				Thread.sleep(1000);
+		System.out.println("Venha conhecer as nossas opções pro seu amiguinho!!!");
+		Thread.sleep(1000);
+		System.out.println("[1] Banho e tosa --> (R$ 50,00 ).");
+		Thread.sleep(1000);
+		System.out.println("[2] Creche --> (R$ 80,00 a 1º hora,R$ 25,00 as demais horas).");
+		Thread.sleep(1000);
+		System.out.println("[3] Passeio --> (R$ 50,00 a 1º hora,R$ 30,00 as demais horas).");
+		Thread.sleep(1000);
+		System.out.println("Digite sua opção...");
 		int op3 = ler.nextInt();
-		
+		while(op3 <1 || op3>3) {
+			System.out.println("Opção inválida!!");
+			Thread.sleep(1000);
+			System.out.println("[1] Banho e tosa --> (R$ 50,00 ).");
+			Thread.sleep(1000);
+			System.out.println("[2] Creche --> (R$ 80,00 a 1º hora,R$ 25,00 as demais horas).");
+			Thread.sleep(1000);
+			System.out.println("[3] Passeio --> (R$ 50,00 a 1º hora,R$ 30,00 as demais horas).");
+			Thread.sleep(1000);
+			System.out.println("Digite sua opção...");
+			op3 = ler.nextInt();
+		}
 		switch(op3)
 		{
 		
 		case 1: 
+			
 			gato.banhoETosa();break;
 		
 		case 2:
@@ -71,29 +124,68 @@ public class TesteSuperPet {
 			
 		}
 		gato.valortotal();
+		Thread.sleep(1000);
+		gato.formaPagamento();
+		Thread.sleep(1000);
+		System.out.println("---------------------------------------------------");
 		System.out.print("Deseja adicionar mais algum serviço [SIM] ou [NÃO] ?");
 		continua2  = ler.next().charAt(0);
 		}while(continua2 == 'S' || continua2 == 's');break;
 		
-		
-		
-			
-			
-			
-		
-		
-		
-	
-		
-		
 		}
+		System.out.println("Obrigado por utilizar nossos serviços, AMIPETS agradece!!!!!!");
+		Thread.sleep(2000);
+		System.out.println("         __ __");
+		System.out.println("        ,;::\\::\\");
+		System.out.println("      ,'/' `/'`/");
+		System.out.println("  _\\,: '.,-'.-':.");
+		System.out.println(" -./\"'  :    :  :\\/,");
+		System.out.println("  ::.  ,:____;__; :-");
+		System.out.println("  :\"  ( .`-*'o*',);");
+		System.out.println("   \\.. ` `---'`' /");
+		System.out.println("    `:._..-   _.'");
+		System.out.println("    ,;  .     `.");
+		System.out.println("   /\"'| |       \\");
+		System.out.println("  ::. ) :        :");
+		System.out.println("  |\" (   \\       |");
+		System.out.println("  :.(_,  :       ;");
+		System.out.println("   \\'`-'_/      /");
+		System.out.println("    `...   , _,'");
+		System.out.println("     |,|  : |");
+		System.out.println("     |`|  | |");
+		System.out.println("     |,|  | |");
+		System.out.println(" ,--.;`|  | '..--.");
+		System.out.println("/;' \"' ;  '..--. ))");
+		System.out.println("\\:.___(___   ) ))'");
+		System.out.println("\n");
+		System.out.println("            ,-----.");
+		System.out.println("          /       \\--.");
+		System.out.println("          |       /   \\");
+		System.out.println("          `. \\-+-',___/");
+		System.out.println("            \\ \\ \\ \\");
+		System.out.println("          ,--\\/\"\"\"\\\"\".");
+		System.out.println("    `._  /    \\    \\  \\");
+		System.out.println("    _  `|   (  \\   o\\o|.,--.");
+		System.out.println("     `-' \\   \\`-;---'-'(   #)");
+		System.out.println("          `._ \\ |\\      `--/");
+		System.out.println("\\.           \\ ||,`.      /");
+		System.out.println(" \\`..--.._    ||/   `===='.");
+		System.out.println("  \\/     _`.__|| .-.    \\  \\");
+		System.out.println("  |     / \\    |'|  `.   !  |");
+		System.out.println("  \\     \\_/    \\_.')  \\  !  |");
+		System.out.println("  ,\"\".  .        _/    \\   /");
+		System.out.println(" /      ;`--'\\  \\ \\     `-'");
+		System.out.println(" |  |`-<      \\  \\ \\");
+		System.out.println(" |  |\\  \\,---. \\  \\ \\,---.");
+		System.out.println(" |  |,---.    `.\\  \\,---. `.");
+		System.out.println(" >        `. | | \\       `.|");
+		System.out.println("(        | |-'-' (      | |'");
+		System.out.println(" `-------'-'      `-----'-' ");
+
+	}catch(Exception z) {
+		System.out.println("Erro,programa finalizado...Inicie novamente. "+z);
 	
-	
-		
-		
 	}
-		
-		
-		
+	}
 }
 

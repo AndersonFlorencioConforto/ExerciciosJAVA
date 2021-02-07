@@ -18,7 +18,7 @@ abstract class SuperPet {
 		this.telefone = telefone;
 		
 	}
-	abstract public void cadastro();
+	abstract public void cadastro() throws InterruptedException;
 	
 	
 		
@@ -64,13 +64,4 @@ abstract class SuperPet {
 		this.telefone = telefone;
 	}
 
-
-
-
-		
 	}
-
-
-
-
-

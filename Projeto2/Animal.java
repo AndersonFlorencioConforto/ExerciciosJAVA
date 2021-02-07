@@ -20,6 +20,8 @@ public String nomeInterface = "Animais";
 	abstract public void creche();
 	abstract public void passeio();
 	abstract public void valortotal();
+	abstract public String formatarMoeda();
+	abstract public void formaPagamento();
 	
 
 }
